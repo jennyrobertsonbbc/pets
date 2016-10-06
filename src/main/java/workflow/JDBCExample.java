@@ -1,25 +1,29 @@
-package workflow;//STEP 1. Import required packages
+package workflow;
+
+//STEP 1. Import required packages
 import java.sql.*;
 
 public class JDBCExample {
     // JDBC driver name and database URL
-    static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-    static final String DB_URL = "jdbc:mysql://localhost/";
+    static final String JDBC_DRIVER = "org.postgresql.Driver";
+    static final String DB_URL = "jdbc:postgresql://localhost/";
+    static final String EXISTING_DATABASE_NAME = "local_elections_2016";
 
     //  Database credentials
-    static final String USER = "roberj78";
-    static final String PASS = "Mookie28";
+    // Your database username and password
+    static final String USER = "elections";
+    static final String PASS = "elections";
 
     public static void main(String[] args) {
         Connection conn = null;
         Statement stmt = null;
         try{
             //STEP 2: Register JDBC driver
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName(JDBC_DRIVER);
 
             //STEP 3: Open a connection
             System.out.println("Connecting to database...");
-            conn = DriverManager.getConnection(DB_URL, USER, PASS);
+            conn = DriverManager.getConnection(DB_URL + EXISTING_DATABASE_NAME, USER, PASS);
 
             //STEP 4: Execute a query
             System.out.println("Creating database...");
