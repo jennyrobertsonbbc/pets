@@ -1,6 +1,5 @@
 package repository;
 
-//STEP 1. Import required packages
 import java.sql.*;
 
 public class DBConnection {
@@ -14,44 +13,53 @@ public class DBConnection {
     static final String USER = "roberj78";
     static final String PASS = "roberj78";
 
-    public void connect(){
+    public Connection connect() {
         Connection databaseConnection = null;
         Statement stmt = null;
-        try{
-            //STEP 2: Register JDBC driver
+        try {
+            //Register JDBC driver
             Class.forName(JDBC_DRIVER);
 
-            //STEP 3: Open a connection
+            //Open a connection
             System.out.println("Connecting to database...");
             databaseConnection = DriverManager.getConnection(DB_URL + EXISTING_DATABASE_NAME, USER, PASS);
 
-//            //STEP 4: Execute a query
-//            System.out.println("Creating database...");
-//            stmt = databaseConnection.createStatement();
-//
-//            String sql = "CREATE DATABASE STUDENTS";
-//            stmt.executeUpdate(sql);
-//            System.out.println("Database created successfully...");
-        }catch(SQLException se){
+
+        } catch (SQLException se) {
             //Handle errors for JDBC
             se.printStackTrace();
-        }catch(Exception e){
+        } catch (Exception e) {
             //Handle errors for Class.forName
             e.printStackTrace();
-        }finally{
-            //finally block used to close resources
-            try{
-                if(stmt!=null)
-                    stmt.close();
-            }catch(SQLException se2){
-            }// nothing we can do
-            try{
-                if(databaseConnection!=null)
-                    databaseConnection.close();
-            }catch(SQLException se){
-                se.printStackTrace();
-            }//end finally try
+
         }//end try
-        System.out.println("Goodbye!");
-    }//end main
+        System.out.println("Finished connect method");
+
+        return databaseConnection;
+
+
+
+    }
+
+    public void disconnect() {
+        Connection databaseConnection = null;
+        Statement stmt = null;
+
+        try {
+            if (stmt != null)
+                stmt.close();
+        } catch (SQLException se2) {
+            System.out.println("Its broken");
+        }// nothing we can do
+        try {
+            if (databaseConnection != null)
+                databaseConnection.close();
+        } catch (SQLException se) {
+            se.printStackTrace();
+        }//end finally try
+
+
+        System.out.println("disconnect finished");
+    }
+
 }//end JDBCExample
