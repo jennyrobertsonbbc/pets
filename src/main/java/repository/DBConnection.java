@@ -1,9 +1,9 @@
-package workflow;
+package repository;
 
 //STEP 1. Import required packages
 import java.sql.*;
 
-public class JDBCExample {
+public class DBConnection {
     // JDBC driver name and database URL
     static final String JDBC_DRIVER = "org.postgresql.Driver";
     static final String DB_URL = "jdbc:postgresql://localhost/";
@@ -14,8 +14,8 @@ public class JDBCExample {
     static final String USER = "roberj78";
     static final String PASS = "roberj78";
 
-    public static void main(String[] args) {
-        Connection conn = null;
+    public void connect(){
+        Connection databaseConnection = null;
         Statement stmt = null;
         try{
             //STEP 2: Register JDBC driver
@@ -23,15 +23,15 @@ public class JDBCExample {
 
             //STEP 3: Open a connection
             System.out.println("Connecting to database...");
-            conn = DriverManager.getConnection(DB_URL + EXISTING_DATABASE_NAME, USER, PASS);
+            databaseConnection = DriverManager.getConnection(DB_URL + EXISTING_DATABASE_NAME, USER, PASS);
 
-            //STEP 4: Execute a query
-            System.out.println("Creating database...");
-            stmt = conn.createStatement();
-
-            String sql = "CREATE DATABASE STUDENTS";
-            stmt.executeUpdate(sql);
-            System.out.println("Database created successfully...");
+//            //STEP 4: Execute a query
+//            System.out.println("Creating database...");
+//            stmt = databaseConnection.createStatement();
+//
+//            String sql = "CREATE DATABASE STUDENTS";
+//            stmt.executeUpdate(sql);
+//            System.out.println("Database created successfully...");
         }catch(SQLException se){
             //Handle errors for JDBC
             se.printStackTrace();
@@ -46,8 +46,8 @@ public class JDBCExample {
             }catch(SQLException se2){
             }// nothing we can do
             try{
-                if(conn!=null)
-                    conn.close();
+                if(databaseConnection!=null)
+                    databaseConnection.close();
             }catch(SQLException se){
                 se.printStackTrace();
             }//end finally try

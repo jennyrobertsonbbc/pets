@@ -2,6 +2,7 @@ import domain.Cat;
 import domain.Dog;
 import domain.Pet;
 import domain.Pig;
+import repository.DBConnection;
 import workflow.PetFeederBeef;
 import workflow.PetFeederHam;
 import workflow.PetFeeder;
@@ -9,8 +10,14 @@ import workflow.PetFeeder;
 /**
  * Created by roberj78 on 29/09/2016.
  */
-public class Test {
+public class PetApplication {
     public static void main(String args[]){
+
+        DBConnection dBConnection = new DBConnection();
+
+        dBConnection.connect();
+
+
         Cat whiskers = new Cat("Whiskers",5, 100);
         Dog bob = new Dog("Bob",12, true);
         Pig babe = new Pig();
