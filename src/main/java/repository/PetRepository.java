@@ -5,7 +5,7 @@ import domain.Pet;
 import java.util.List;
 
 
-public class PetRepository {
+public class PetRepository implements Repository<Pet>{
 
     private PetLoader petLoader = new PetLoader();
     private PetSaver petSaver = new PetSaver();
