@@ -17,7 +17,11 @@ public class PetExtractor {
     public List<Pet> petList = new ArrayList<Pet>();
 
 
-    public List<Pet> extract(ResultSet resultSet) {
+    public List<Pet> extract() {
+
+        DBSelect dBSelect = new DBSelect();
+
+        ResultSet resultSet = dBSelect.sendQuery("SELECT * FROM pets ORDER BY pet_id ASC;");
 
 
         try {
@@ -53,11 +57,11 @@ public class PetExtractor {
             //JDBCTutorialUtilities.printSQLException(e);
         }
 
-        for (
-                Pet pet : petList) {
-            System.out.println(pet.toString());
-        }
-        System.out.println("\n");
+//        for (
+//                Pet pet : petList) {
+//            System.out.println(pet.toString());
+//        }
+//        System.out.println("\n");
 
         return petList;
     }

@@ -5,7 +5,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class DBQuery {
+public class DBSelect {
 
     public ResultSet sendQuery(String query) {
 
@@ -19,7 +19,7 @@ public class DBQuery {
             resultSet = statement.executeQuery(query);
 
         } catch (SQLException e) {
-            System.out.println("SQL exception" + e.getMessage());
+            System.out.println("SQL exception " + e.getMessage());
         }
 
         dBConnection.disconnect();

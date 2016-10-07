@@ -21,7 +21,7 @@ public class DBConnection {
             Class.forName(JDBC_DRIVER);
 
             //Open a connection
-            System.out.println("Connecting to database...");
+            //System.out.println("Connecting to database...");
             databaseConnection = DriverManager.getConnection(DB_URL + EXISTING_DATABASE_NAME, USER, PASS);
 
 
@@ -33,10 +33,8 @@ public class DBConnection {
             e.printStackTrace();
 
         }//end try
-        System.out.println("Finished connect method");
 
         return databaseConnection;
-
 
 
     }
@@ -59,7 +57,7 @@ public class DBConnection {
         }//end finally try
 
 
-        System.out.println("disconnect finished");
+        //System.out.println("disconnect finished");
     }
 
 }//end JDBCExample
