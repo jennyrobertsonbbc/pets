@@ -6,8 +6,8 @@ package domain;
 public class Cat extends AbstractPet {
     private int number_of_whiskers;
 
-    public Cat(int pet_id, int owner_id, String name, int age, int hunger, int pet_type_id, int number_of_whiskers) {
-        super(pet_id, owner_id, name, age, hunger, pet_type_id);
+    public Cat(int petId, int ownerId, String name, int age, int hunger, int petTypeId, int number_of_whiskers) {
+        super(petId, ownerId, name, age, hunger, petTypeId);
         this.number_of_whiskers = number_of_whiskers;
     }
 
