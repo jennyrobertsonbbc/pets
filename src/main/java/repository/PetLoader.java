@@ -4,24 +4,22 @@ import domain.*;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 
 /**
  * Created by roberj78 on 06/10/2016.
  */
-public class PetExtractor {
+public class PetLoader {
 
     public List<Pet> petList = new ArrayList<Pet>();
 
 
     public List<Pet> extract() {
 
-        DBSelect dBSelect = new DBSelect();
+        DBQuery dbQuery = new DBQuery();
 
-        ResultSet resultSet = dBSelect.sendQuery("SELECT * FROM pets ORDER BY pet_id ASC;");
+        ResultSet resultSet = dbQuery.sendSelectQuery("SELECT * FROM pets ORDER BY pet_id ASC;");
 
 
         try {

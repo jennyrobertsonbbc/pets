@@ -5,9 +5,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class DBSelect {
+public class DBQuery {
 
-    public ResultSet sendQuery(String query) {
+    public ResultSet sendSelectQuery(String query) {
 
         DBConnection dBConnection = new DBConnection();
         Connection connection = dBConnection.connect();
@@ -24,6 +24,26 @@ public class DBSelect {
 
         dBConnection.disconnect();
         return resultSet;
+    }
+
+    public void sendUpdateQuery(String query) {
+
+        DBConnection dBConnection = new DBConnection();
+        Connection connection = dBConnection.connect();
+
+
+        try {
+            Statement statement = null;
+            statement = connection.createStatement();
+            statement.executeUpdate(query);
+
+
+        } catch (SQLException e) {
+            System.out.println("SQL exception " + e.getMessage());
+        }
+
+        dBConnection.disconnect();
+
     }
 
 

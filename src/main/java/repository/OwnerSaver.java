@@ -11,7 +11,7 @@ import java.util.List;
 public class OwnerSaver {
     public void save(List<Owner> listOfOwners){
 
-        DBUpdate dBUpdate = new DBUpdate();
+        DBQuery dbQuery = new DBQuery();
 
         for(Owner owner : listOfOwners){
 
@@ -23,7 +23,7 @@ public class OwnerSaver {
             );
             //System.out.println(query);
 
-            dBUpdate.sendQuery(query);
+           dbQuery.sendUpdateQuery(query);
 
 
 

@@ -10,7 +10,7 @@ import java.util.List;
 public class PetSaver {
     public void save(List<Pet> listOfPets){
 
-        DBUpdate dBUpdate = new DBUpdate();
+        DBQuery dbQuery = new DBQuery();
 
         for(Pet pet : listOfPets){
 
@@ -25,7 +25,7 @@ public class PetSaver {
             );
             //System.out.println(query);
 
-            dBUpdate.sendQuery(query);
+            dbQuery.sendUpdateQuery(query);
 
 
 

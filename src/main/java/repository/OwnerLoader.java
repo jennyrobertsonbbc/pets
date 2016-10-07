@@ -10,16 +10,16 @@ import java.util.List;
 /**
  * Created by roberj78 on 06/10/2016.
  */
-public class OwnerExtractor {
+public class OwnerLoader {
 
     public List<Owner> ownerList = new ArrayList<Owner>();
 
 
     public List<Owner> extract() {
 
-        DBSelect dBSelect = new DBSelect();
+        DBQuery dBQuery = new DBQuery();
 
-        ResultSet resultSet = dBSelect.sendQuery("SELECT * FROM owners ORDER BY owner_id ASC;");
+        ResultSet resultSet = dBQuery.sendSelectQuery("SELECT * FROM owners ORDER BY owner_id ASC;");
 
 
         try {
