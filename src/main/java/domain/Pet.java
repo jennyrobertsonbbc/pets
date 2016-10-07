@@ -16,17 +16,17 @@ public interface Pet {
     public int getAge();
 
     public void setAge(int age);
-    public int getPet_id();
+    public int getPetId();
 
-    public void setPet_id(int pet_id);
+    public void setPetId(int petId);
 
-    public int getOwner_id();
+    public int getOwnerId();
 
-    public void setOwner_id(int owner_id);
+    public void setOwnerId(int ownerId);
 
-    public int getPet_type_id();
+    public int getPetTypeId();
 
-    public void setPet_type_id(int pet_type_id);
+    public void setPetTypeId(int petTypeId);
 
     public void speak(int numberOfTimes);
 }

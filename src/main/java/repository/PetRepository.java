@@ -7,12 +7,12 @@ import java.util.List;
 
 public class PetRepository implements Repository<Pet>{
 
-    private PetLoader petLoader = new PetLoader();
+    private PetExtractor petExtractor = new PetExtractor();
     private PetSaver petSaver = new PetSaver();
 
     public List<Pet> load() {
         //Load in pets from database as a list
-        List<Pet> listOfPets = petLoader.extract();
+        List<Pet> listOfPets = petExtractor.extract();
         return listOfPets;
 
     }

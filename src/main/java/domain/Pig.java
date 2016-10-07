@@ -5,45 +5,20 @@ package domain;
  */
 public class Pig implements Pet {
 
-    private int pet_id;
-    private int owner_id;
+    private int petId;
+    private int ownerId;
     private String name;
     private int age;
     private int hunger;
-    private int pet_type_id;
+    private int petTypeId;
 
-    public Pig(int pet_id, int owner_id, String name, int age, int hunger, int pet_type_id) {
-        this.pet_id = pet_id;
-        this.owner_id = owner_id;
+    public Pig(int petId, int ownerId, String name, int age, int hunger, int petTypeId) {
+        this.petId = petId;
+        this.ownerId = ownerId;
         this.name = name;
         this.age = age;
         this.hunger = hunger;
-        this.pet_type_id = pet_type_id;
-    }
-
-    //other people do it
-    public int getHunger() {
-        return 100;
-    }
-
-    public void setHunger(int hunger) {
-
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-
-    }
-
-    public int getAge() {
-        return 0;
-    }
-
-    public void setAge(int age) {
-
+        this.petTypeId = petTypeId;
     }
 
     public void speak(int numberOfTimes) {
@@ -53,36 +28,63 @@ public class Pig implements Pet {
 
     }
 
-    public int getPet_id() {
-        return pet_id;
+    public int getPetId() {
+        return petId;
     }
 
-    public void setPet_id(int pet_id) {
-        this.pet_id = pet_id;
+    public void setPetId(int petId) {
+        this.petId = petId;
     }
 
-    public int getOwner_id() {
-        return owner_id;
+    public int getOwnerId() {
+        return ownerId;
     }
 
-    public void setOwner_id(int owner_id) {
-        this.owner_id = owner_id;
+    public void setOwnerId(int ownerId) {
+        this.ownerId = ownerId;
     }
 
-    public int getPet_type_id() {
-        return pet_type_id;
+    public String getName() {
+        return name;
     }
 
-    public void setPet_type_id(int pet_type_id) {
-        this.pet_type_id = pet_type_id;
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public int getHunger() {
+        return hunger;
+    }
+
+    public void setHunger(int hunger) {
+        this.hunger = hunger;
+    }
+
+    public int getPetTypeId() {
+        return petTypeId;
+    }
+
+    public void setPetTypeId(int petTypeId) {
+        this.petTypeId = petTypeId;
     }
 
     @Override
     public String toString() {
         return "Pig{" +
-                "name='" + name + '\'' +
+                "petId=" + petId +
+                ", ownerId=" + ownerId +
+                ", name='" + name + '\'' +
                 ", age=" + age +
                 ", hunger=" + hunger +
+                ", petTypeId=" + petTypeId +
                 '}';
     }
 }

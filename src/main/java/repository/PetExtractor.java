@@ -10,7 +10,7 @@ import java.sql.SQLException;
 /**
  * Created by roberj78 on 06/10/2016.
  */
-public class PetLoader {
+public class PetExtractor {
 
     public List<Pet> petList = new ArrayList<Pet>();
 
@@ -25,26 +25,26 @@ public class PetLoader {
         try {
             while (resultSet.next()) {
 
-                int pet_id = resultSet.getInt("pet_id");
-                int owner_id = resultSet.getInt("owner_id");
+                int petId = resultSet.getInt("pet_id");
+                int ownerId = resultSet.getInt("owner_id");
                 String petName = resultSet.getString("pet_name");
-                int pet_age = resultSet.getInt("pet_age");
-                int pet_hunger = resultSet.getInt("pet_hunger");
-                int pet_type_id = resultSet.getInt("pet_type_id");
+                int petAge = resultSet.getInt("pet_age");
+                int petHunger = resultSet.getInt("pet_hunger");
+                int petTypeId = resultSet.getInt("pet_type_id");
 
 
-                switch (pet_type_id) {
+                switch (petTypeId) {
                     case 1://guineapig
-                        petList.add(new GuineaPig(pet_id, owner_id, petName, pet_age, pet_hunger, pet_type_id));
+                        petList.add(new GuineaPig(petId, ownerId, petName, petAge, petHunger, petTypeId));
                         break;
                     case 2://cat
-                        petList.add(new Cat(pet_id, owner_id, petName, pet_age, pet_hunger, pet_type_id, 100));
+                        petList.add(new Cat(petId, ownerId, petName, petAge, petHunger, petTypeId, 100));
                         break;
                     case 3://pig
-                        petList.add(new Pig(pet_id, owner_id, petName, pet_age, pet_hunger, pet_type_id));
+                        petList.add(new Pig(petId, ownerId, petName, petAge, petHunger, petTypeId));
                         break;
                     case 4://dog
-                        petList.add(new Dog(pet_id, owner_id, petName, pet_age, pet_hunger, pet_type_id, true));
+                        petList.add(new Dog(petId, ownerId, petName, petAge, petHunger, petTypeId, true));
                         break;
                 }
 

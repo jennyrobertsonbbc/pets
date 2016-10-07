@@ -4,29 +4,43 @@ package domain;
  * Created by roberj78 on 29/09/2016.
  */
 abstract class AbstractPet implements Pet{
-    private int pet_id;
-    private int owner_id;
+    private int petId;
+    private int ownerId;
     private String name;
     private int age;
     private int hunger;
-    private int pet_type_id;
+    private int petTypeId;
 
-    public AbstractPet(int pet_id, int owner_id, String name, int age, int hunger, int pet_type_id) {
-        this.pet_id = pet_id;
-        this.owner_id = owner_id;
+
+    public AbstractPet(int petId, int ownerId, String name, int age, int hunger, int petTypeId) {
+        this.petId = petId;
+        this.ownerId = ownerId;
         this.name = name;
         this.age = age;
         this.hunger = hunger;
-        this.pet_type_id = pet_type_id;
-    }
-
-    public int getHunger() {
-        return hunger;
+        this.petTypeId = petTypeId;
     }
 
     public void setHunger(int hunger) {
         this.hunger = hunger;
         System.out.printf("%s's hunger is now %d.\n\n",this.name,getHunger());
+    }
+
+
+    public int getPetId() {
+        return petId;
+    }
+
+    public void setPetId(int petId) {
+        this.petId = petId;
+    }
+
+    public int getOwnerId() {
+        return ownerId;
+    }
+
+    public void setOwnerId(int ownerId) {
+        this.ownerId = ownerId;
     }
 
     public String getName() {
@@ -45,36 +59,27 @@ abstract class AbstractPet implements Pet{
         this.age = age;
     }
 
-    public int getPet_id() {
-        return pet_id;
+    public int getHunger() {
+        return hunger;
     }
 
-    public void setPet_id(int pet_id) {
-        this.pet_id = pet_id;
+    public int getPetTypeId() {
+        return petTypeId;
     }
 
-    public int getOwner_id() {
-        return owner_id;
-    }
-
-    public void setOwner_id(int owner_id) {
-        this.owner_id = owner_id;
-    }
-
-    public int getPet_type_id() {
-        return pet_type_id;
-    }
-
-    public void setPet_type_id(int pet_type_id) {
-        this.pet_type_id = pet_type_id;
+    public void setPetTypeId(int petTypeId) {
+        this.petTypeId = petTypeId;
     }
 
     @Override
     public String toString() {
         return "AbstractPet{" +
-                "name='" + name + '\'' +
+                "petId=" + petId +
+                ", ownerId=" + ownerId +
+                ", name='" + name + '\'' +
                 ", age=" + age +
                 ", hunger=" + hunger +
+                ", petTypeId=" + petTypeId +
                 '}';
     }
 }

@@ -21,7 +21,7 @@ public class PetSaver {
                             "pet_hunger = '%d'," +
                             "pet_type_id  = '%d'" +
                             " WHERE pet_id = '%d';",
-                    pet.getOwner_id(), pet.getName(), pet.getAge(), pet.getHunger(), pet.getPet_type_id(),pet.getPet_id()
+                    pet.getOwnerId(), pet.getName(), pet.getAge(), pet.getHunger(), pet.getPetTypeId(),pet.getPetId()
             );
             //System.out.println(query);
 

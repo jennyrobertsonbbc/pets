@@ -10,7 +10,7 @@ import java.util.List;
 public class OwnerRepository implements Repository<Owner>{
 
 
-    private OwnerLoader ownerLoader = new OwnerLoader();
+    private OwnerExtractor ownerLoader = new OwnerExtractor();
     private OwnerSaver ownerSaver = new OwnerSaver();
 
     public List<Owner> load() {

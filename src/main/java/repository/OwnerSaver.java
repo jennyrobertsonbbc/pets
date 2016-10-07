@@ -19,7 +19,7 @@ public class OwnerSaver {
                             "owner_name = '%s'," +
                             "owner_age = '%d'" +
                             " WHERE owner_id = '%d';",
-                    owner.getName(), owner.getAge(), owner.getOwner_ID()
+                    owner.getName(), owner.getAge(), owner.getOwnerID()
             );
             //System.out.println(query);
 
