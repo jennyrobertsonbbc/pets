@@ -7,8 +7,19 @@ import domain.Pet;
  */
 public class PetFeederBeef implements PetFeeder {
     public void feed(Pet abstractPet, int amountOfFood) {
-        System.out.printf("Feeding %s the %s %d slices chunks of beef.\n", abstractPet.getName(), abstractPet.getClass().getSimpleName(), amountOfFood);
-        abstractPet.setHunger(abstractPet.getHunger()-amountOfFood * 2);
+
+
+        int newHunger = abstractPet.getHunger()+amountOfFood * 2;
+
+        System.out.printf("Feeding %s the %s %d chunks of beef.\n", abstractPet.getName(), abstractPet.getClass().getSimpleName(), amountOfFood);
+
+        if(newHunger >= 0 && newHunger <= 100) {
+
+            abstractPet.setHunger(newHunger);
+        }
+        else if(newHunger <= 100){
+            System.out.printf("%s is too full to eat that!\n", abstractPet.getName());
+        }
 
 
 
